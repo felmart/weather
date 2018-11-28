@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 import requests
 import sys
 import json
@@ -11,8 +14,10 @@ if len(sys.argv) < 2:
 location = ' '.join(sys.argv[1:])
 
 # download the json data from openweather
-# Solve the error 401
-url = 'http://api.openweathermap.org/data/2.5/forecast?q=%s&cnt=3' % (location)
+
+# replace 'yourapikeyshouldbeinsertedhere' with your OWM API key
+url = 'http://api.openweathermap.org/data/2.5/forecast?q=%s&APPID=yourapikeyshouldbeinsertedhere' % (location)
+
 
 try:
     response = requests.get(url)
