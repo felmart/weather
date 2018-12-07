@@ -13,20 +13,16 @@ if len(sys.argv) < 2:
 
 location = ' '.join(sys.argv[1:])
 
-# create location string
-def location_str(location):
-    '''Join the location string to remove the space in the name'''
-    location = ' '.join(location[1:])
-    return location
-
 
 # function to read key data from file
-def reader(filename):
+def key_reader(keyfile):
     '''
     Read the key data from a text file rather than rely on user input
     Store the key as a variable
     '''
-    pass
+    with open('key.txt', 'r') as key:
+        api_key = str(key.read())
+    return api_key
 
 
 # download the json data from openweather
@@ -61,27 +57,15 @@ def data_loader():
     print('Day after tomorrow:')
     print(w[2]['weather'][0]['main'], '-', w[2]['weather'][0]['description'])
 
+
 def get_weather_data(location):
     '''Fetch weather data for a location'''
     pass
 
 
-def more_locations(location):
-    '''Fetch weather data for every location in the locations list'''
-    pass
-
-
-def get_locations(num):
-    '''Get user input on list of locations.
-    Let the user specify how many locations'''
-    while num > 0:
-        fetcher()
-        num -= 1
-
-def __main__():
+def main():
     '''Main function'''
     pass
 
 
-if name = __main__:
-    main()
+main()
