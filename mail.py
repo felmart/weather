@@ -23,4 +23,9 @@ def password_reader(key_file):
     pass
 
 
-
+smtpObj = smtplib.SMTP('smtp.gmail.com', 587)
+smtpObj.ehlo()
+smtpObj.starttls()
+smtpObj.login('email@domain.com', 'PASSWORD')
+smtpObj.sendmail('recipient@domain.com', 'Subject: Today\'s Weather Forecast\n')
+smtpObj.quit()
